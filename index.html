@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Rifatur Rahman | Clinical Physiotherapist & Founder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* --- Brand Identity --- */
+        :root {
+            /* Primary Brand Colors */
+            --brand-maroon: #5D1826; /* Deep Burgundy from Suit */
+            --brand-maroon-light: #8B2635;
+            --brand-green: #0F7D34;  /* Motion Mechanics Green */
+            --brand-green-dark: #0A5824;
+            
+            /* Neutrals */
+            --text-main: #1F2937;
+            --text-muted: #6B7280;
+            --bg-canvas: #F3F4F6;
+            --bg-paper: #FFFFFF;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-canvas);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .font-serif { font-family: 'Merriweather', serif; }
+        
+        /* --- Custom Utilities --- */
+        .text-gradient {
+            background: linear-gradient(to right, var(--brand-maroon), var(--brand-maroon-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #E5E7EB;
+        }
+
+        .section-header h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--brand-maroon);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Timeline Styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 2px solid #E5E7EB;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-left-color: transparent;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -0.5625rem; /* -9px */
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--bg-paper);
+            border: 3px solid var(--brand-maroon);
+            box-shadow: 0 0 0 4px rgba(93, 24, 38, 0.1);
+        }
+
+        .timeline-marker.green {
+            border-color: var(--brand-green);
+            box-shadow: 0 0 0 4px rgba(15, 125, 52, 0.1);
+        }
+
+        /* Tabs */
+        .nav-btn {
+            position: relative;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover { color: var(--brand-maroon); }
+
+        .nav-btn.active {
+            color: var(--brand-maroon);
+            background-color: white;
+            border-radius: 0.5rem 0.5rem 0 0;
+            border-bottom: 3px solid var(--brand-maroon);
+        }
+
+        /* Print Optimization */
+        @media print {
+            body { background-color: white; }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            .shadow-xl, .shadow-lg, .shadow-md { box-shadow: none !important; }
+            .max-w-5xl { max-width: 100% !important; }
+            .bg-white { background: none !important; }
+            a { text-decoration: none; color: black; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6">
+
+    <!-- Floating Action Buttons (No Print) -->
+    <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50 no-print">
+        <button onclick="window.print()" class="bg-gray-800 hover:bg-gray-900 text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110" title="Save as PDF">
+            <i class="fas fa-print text-xl"></i>
+        </button>
+        <a href="mailto:mdrifaturrahman29@gmail.com" class="bg-[var(--brand-maroon)] hover:bg-[var(--brand-maroon-light)] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110" title="Contact Me">
+            <i class="fas fa-envelope text-xl"></i>
+        </a>
+    </div>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-5xl bg-white shadow-2xl rounded-2xl overflow-hidden">
+
+        <!-- HERO SECTION -->
+        <header class="relative bg-gray-900 text-white">
+            <!-- Background Texture/Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-r from-[var(--brand-maroon)] to-[#2d0b13] opacity-90"></div>
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+
+            <div class="relative z-10 flex flex-col md:flex-row">
+                
+                <!-- Profile Image Area -->
+                <div class="md:w-1/3 h-96 md:h-auto relative bg-gray-800 overflow-hidden group">
+                    <!-- 
+                        Google Drive Direct Link for Profile Image.
+                        Fallback to local file if link fails.
+                    -->
+                    <img src="assets/images/portrait.png" 
+                         alt="Md. Rifatur Rahman" 
+                         class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        onerror="this.src='assets/images/portrait.png';">
+                         
+                    <!-- Overlay for Logo on Mobile -->
+                    <div class="absolute top-4 left-4 md:hidden bg-white/90 p-2 rounded-lg shadow-lg">
+                        <img src="assets/images/logo.png" 
+                              alt="MM Logo" 
+                              class="w-8 h-8 object-contain"
+                            onerror="this.src='assets/images/logo.png';">
+                    </div>
+                </div>
+
+                <!-- Header Content -->
+                <div class="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-[var(--brand-green)] font-bold tracking-widest uppercase text-sm mb-2 bg-white/10 inline-block px-2 py-1 rounded">Clinical Specialist</p>
+                            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-2">Md. Rifatur Rahman</h1>
+                            <p class="text-xl font-light text-gray-300">B.Sc. in PT (DU) | Founder of Motion Mechanics</p>
+                        </div>
+                        <!-- Desktop Logo -->
+                        <div class="hidden md:block bg-white p-3 rounded-xl shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
+                               <img src="assets/images/logo.png" 
+                                 alt="Motion Mechanics" 
+                                 class="w-16 h-16 object-contain"
+                                   onerror="this.src='assets/images/logo.png';">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mt-6 pt-6 border-t border-white/20">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-phone text-[var(--brand-green)]"></i> +880 164 575 4966
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-[var(--brand-green)]"></i> mdrifaturrahman29@gmail.com
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-[var(--brand-green)]"></i> Savar, Dhaka, Bangladesh
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-globe text-[var(--brand-green)]"></i> Motion Mechanics Hub
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav class="flex border-b border-gray-200 bg-gray-50 px-8 pt-4 no-print sticky top-0 z-20">
+            <button onclick="switchTab('bio')" id="tab-bio" class="nav-btn active">
+                <i class="fas fa-book-open mr-2"></i> Narrative Bio
+            </button>
+            <button onclick="switchTab('cv')" id="tab-cv" class="nav-btn">
+                <i class="fas fa-file-alt mr-2"></i> Full Curriculum Vitae
+            </button>
+        </nav>
+
+        <!-- CONTENT BODY -->
+        <div class="p-8 md:p-12">
+            
+            <!-- TAB: NARRATIVE BIO -->
+            <article id="content-bio" class="animate-fade-in block">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">
+                        Clinical Precision, <span class="text-[var(--brand-maroon)] italic">Revolutionary Purpose</span>
+                    </h2>
+                    
+                    <div class="prose prose-lg text-gray-700 font-serif leading-relaxed space-y-6">
+                        <p>
+                            <span class="text-6xl float-left mr-3 mt-[-15px] text-[var(--brand-maroon)] font-bold">M</span>
+                            d. Rifatur Rahman is a Clinical Physiotherapist operating at the intersection of evidence-based practice and mission-driven reform. His professional life is defined by two distinct, yet united, goals: delivering high-level clinical care and actively dismantling the barriers that limit access to quality physiotherapy education.
+                        </p>
+                        
+                        <p>
+                            As a Clinical Physiotherapist in the Musculoskeletal Unit at the <strong>Centre for the Rehabilitation of the Paralysed (CRP)</strong>, Rifatur manages complex orthopedic, spine, and musculoskeletal caseloads. His practice is built on a foundation of advanced postgraduate specialization. He is highly trained in <strong>Mechanical Diagnosis and Therapy (MDT - McKenzie Method)</strong>, managing complex MSK pain, and Dry Needling. This specialized expertise allows him to apply precise differential diagnosis and advanced manual therapy, with further clinical experience extending into specialized burn rehabilitation units.
+                        </p>
+
+                        <blockquote class="p-6 my-8 bg-gray-50 border-l-4 border-[var(--brand-green)] rounded-r-lg italic text-gray-800 shadow-sm">
+                            "I believe motion is hope. I believe healing is a form of rebellion."
+                        </blockquote>
+
+                        <p>
+                            However, clinical practice is only half of the equation. Rifatur is driven by a restless academic curiosity, viewing research not as a separate pursuit but as a necessary component of excellence. His belief that physiotherapy in Bangladesh must evolve through data and population-specific insight is reflected in his Master’s thesis on <em>"Effectiveness of Reciprocal Inhibition Techniques for Individuals with Adhesive Capsulitis of Shoulder."</em>
+                        </p>
+
+                        <p>
+                            This drive extends beyond the clinic. Rifatur is the founder of <strong>Motion Mechanics Physiotherapy and Rehabilitation Hub</strong>, a platform born from a new generation's demand for fairness, transparency, and purpose. Motion Mechanics is his answer to a system he seeks to change; it's an engine built to <em>"restore knowledge culture, break gatekeeping, and bring global-standard physiotherapy education within reach of every student in Bangladesh."</em>
+                        </p>
+
+                        <p>
+                            Ultimately, Rifatur's career is a unified narrative. Anchored by his role as a father to three children, he mentors junior physiotherapists, contributes to research, and builds a digital community—all driven by a single philosophy. He is working to move Bangladesh’s physiotherapy landscape closer to the future it deserves.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TAB: FULL CV -->
+            <section id="content-cv" class="animate-fade-in hidden">
+                
+                <!-- Professional Summary -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-10 shadow-sm">
+                    <div class="section-header mb-4 border-none p-0">
+                        <i class="fas fa-user-tie text-[var(--brand-maroon)] text-xl"></i>
+                        <h3>Professional Summary</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        A highly motivated and evidence-based Clinical Physiotherapist with advanced postgraduate specialization in <strong>Mechanical Diagnosis and Therapy (MDT - McKenzie Method)</strong> for the complete spine, <strong>Musculoskeletal Pain Management</strong>, and <strong>Dry Needling</strong>.
+                        <br><br>
+                        Combines <strong>2.5 years of intensive clinical practice</strong> at the Centre for the Rehabilitation of the Paralysed (CRP), managing complex orthopedic, spine, and musculoskeletal caseloads. Proven expertise in differential diagnosis, advanced manual therapy, and developing patient-centered rehabilitation programs. Includes direct experience in specialized burn and neurological rehabilitation units. Passionate about elevating physiotherapy standards by integrating clinical excellence with a culture of research and continuous professional education.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    
+                    <!-- LEFT COLUMN (Main Content) -->
+                    <div class="lg:col-span-2">
+                        
+                        <!-- EXPERIENCE -->
+                        <div class="mb-10">
+                            <div class="section-header">
+                                <i class="fas fa-briefcase text-[var(--brand-maroon)]"></i>
+                                <h3>Clinical Experience</h3>
+                            </div>
+
+                            <!-- Job 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                    <div>
+                                        <h4 class="text-lg font-bold text-gray-900">Clinical Physiotherapist</h4>
+                                        <p class="text-[var(--brand-maroon)] font-medium">Centre for the Rehabilitation of the Paralysed (CRP)</p>
+                                        <p class="text-sm text-gray-500">Unit: Physiotherapy Department (Musculoskeletal Unit 3)</p>
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full mt-2 sm:mt-0 border border-gray-200">June 2023 – Nov 2025</span>
+                                </div>
+                                <ul class="list-disc list-outside ml-4 text-gray-700 text-sm space-y-2 mt-4">
+                                    <li>Managed a demanding caseload of diverse musculoskeletal and orthopedic conditions, with a specialty focus on acute and chronic spinal disorders.</li>
+                                    <li>Led the differential diagnosis and treatment of patients using <strong>Mechanical Diagnosis and Therapy (MDT)</strong> principles for lumbar, cervical, and thoracic spine pathologies.</li>
+                                    <li>Integrated advanced therapeutic modalities, including <strong>Dry Needling</strong>, into treatment plans to effectively manage myofascial pain, reduce symptoms, and accelerate functional restoration.</li>
+                                    <li>Served as a key member of the burn rehabilitation team, designing and implementing specialized protocols for <em>"Positioning and Early Mobilization after Burn Injury"</em> to prevent contractures and optimize patient outcomes.</li>
+                                    <li>Developed, implemented, and modified comprehensive, evidence-based rehabilitation programs for a wide range of pre- and post-operative orthopedic conditions.</li>
+                                    <li>Mentored and provided clinical guidance to junior physiotherapists and interns, fostering an environment of continuous learning and knowledge sharing.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Job 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker green"></div>
+                                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
+                                    <div>
+                                        <h4 class="text-lg font-bold text-gray-900">Postgraduate Intern Physiotherapist</h4>
+                                        <p class="text-[var(--brand-maroon)] font-medium">Centre for the Rehabilitation of the Paralysed (CRP)</p>
+                                    </div>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 rounded-full mt-2 sm:mt-0 border border-gray-200">May 2022 – May 2023</span>
+                                </div>
+                                <p class="text-sm text-gray-700 mt-2 mb-2">Completed an intensive 1-year rotational internship with comprehensive practical experience in key departments, including:</p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded border border-blue-100">Musculoskeletal Unit</span>
+                                    <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs rounded border border-purple-100">Neurology Unit</span>
+                                    <span class="px-2 py-1 bg-yellow-50 text-yellow-700 text-xs rounded border border-yellow-100">Paediatrics Unit</span>
+                                    <span class="px-2 py-1 bg-red-50 text-red-700 text-xs rounded border border-red-100">Spinal Cord Lesion (SCL)</span>
+                                </div>
+                                <p class="text-sm text-gray-700">Gained extensive hands-on proficiency in comprehensive patient assessment, clinical reasoning, and the application of core physiotherapy techniques across diverse and complex patient populations.</p>
+                            </div>
+                        </div>
+
+                        <!-- EDUCATION -->
+                        <div class="mb-10">
+                            <div class="section-header">
+                                <i class="fas fa-graduation-cap text-[var(--brand-maroon)]"></i>
+                                <h3>Academic Education</h3>
+                            </div>
+
+                            <div class="space-y-6">
+                                <!-- BSc -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="bg-[var(--brand-maroon)] text-white w-12 h-12 rounded flex items-center justify-center font-bold text-lg flex-shrink-0">01</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Bachelor of Science (B.Sc.) in Physiotherapy</h4>
+                                        <p class="text-sm font-medium text-gray-700">University of Dhaka</p>
+                                        <p class="text-sm text-gray-600">Affiliated Institute: Bangladesh Health Professions Institute (BHPI)</p>
+                                        <p class="text-xs text-gray-500 mt-1">Session: 2015-2016 | Exam Held: Aug 2020 (Cert. Issued 2022)</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- HSC -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="bg-gray-200 text-gray-600 w-12 h-12 rounded flex items-center justify-center font-bold text-lg flex-shrink-0">02</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Higher Secondary Certificate (HSC)</h4>
+                                        <p class="text-sm text-gray-700">Savar Model College | Science Group</p>
+                                        <p class="text-xs text-gray-500 mt-1">2015 | Result: GPA 4.50 out of 5.00</p>
+                                    </div>
+                                </div>
+
+                                <!-- SSC -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="bg-gray-200 text-gray-600 w-12 h-12 rounded flex items-center justify-center font-bold text-lg flex-shrink-0">03</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Secondary School Certificate (SSC)</h4>
+                                        <p class="text-sm text-gray-700">Radio Colony Model School | Science Group</p>
+                                        <p class="text-xs text-gray-500 mt-1">2013 | Result: GPA 4.81 out of 5.00</p>
+                                    </div>
+                                </div>
+
+                                <!-- JSC -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="bg-gray-200 text-gray-600 w-12 h-12 rounded flex items-center justify-center font-bold text-lg flex-shrink-0">04</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Junior School Certificate (JSC)</h4>
+                                        <p class="text-sm text-gray-700">Radio Colony Model School</p>
+                                        <p class="text-xs text-gray-500 mt-1">2010 | Result: GPA 4.57 out of 5.00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN (Sidebar) -->
+                    <div class="space-y-8">
+                        
+                        <!-- CERTIFICATIONS -->
+                        <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-[var(--brand-maroon)]">
+                            <h3 class="font-bold text-gray-900 uppercase mb-4 flex items-center gap-2">
+                                <i class="fas fa-certificate text-[var(--brand-maroon)]"></i> Certifications
+                            </h3>
+                            
+                            <div class="space-y-4">
+                                <div class="pb-3 border-b border-gray-100 last:border-0">
+                                    <p class="font-bold text-sm text-gray-800">MDT Part B: Cervical & Thoracic Spine</p>
+                                    <p class="text-xs text-gray-500">McKenzie Institute International (Jan 2025)</p>
+                                </div>
+                                <div class="pb-3 border-b border-gray-100 last:border-0">
+                                    <p class="font-bold text-sm text-gray-800">Certified in Dry Needling (3-Day)</p>
+                                    <p class="text-xs text-gray-500">IPRR, Academic Institute of BPA (Aug 2025)</p>
+                                </div>
+                                <div class="pb-3 border-b border-gray-100 last:border-0">
+                                    <p class="font-bold text-sm text-gray-800">MDT Part A: The Lumbar Spine</p>
+                                    <p class="text-xs text-gray-500">McKenzie Institute International (April 2024)</p>
+                                </div>
+                                <div class="pb-3 border-b border-gray-100 last:border-0">
+                                    <p class="font-bold text-sm text-gray-800">Positioning & Early Mobilization (Burn)</p>
+                                    <p class="text-xs text-gray-500">CRP & UK-Med | Ref: CRP/PT/2102/24</p>
+                                </div>
+                                <div class="pb-3 border-b border-gray-100 last:border-0">
+                                    <p class="font-bold text-sm text-gray-800">Musculoskeletal Pain Management (64 Hr)</p>
+                                    <p class="text-xs text-gray-500">IPRR, BPA (March – June 2023)</p>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm text-gray-800">Workshop: Professional Diversity</p>
+                                    <p class="text-xs text-gray-500">BHPI, CRP (Jan 2022)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- RESEARCH & PRESENTATIONS -->
+                        <div class="bg-gray-900 text-white rounded-xl shadow-md p-6 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-2 opacity-10"><i class="fas fa-microphone-alt text-8xl"></i></div>
+                            <h3 class="font-bold uppercase mb-4 flex items-center gap-2 relative z-10">
+                                <i class="fas fa-bullhorn text-[var(--brand-green)]"></i> Research & Talks
+                            </h3>
+                            
+                            <div class="mb-6 relative z-10">
+                                <span class="inline-block bg-[var(--brand-green)] text-xs font-bold px-2 py-1 rounded mb-2">Honorable Speaker</span>
+                                <p class="font-bold text-sm">1st Int. Conference for Rehabilitation Professionals 2017</p>
+                                <p class="text-xs text-gray-400 mt-1">"Comprehensive Rehabilitation Services for Achieving a Milestone of SDG"</p>
+                                <p class="text-xs text-gray-500 mt-1 italic">Organized by BPA (Dec 2017)</p>
+                            </div>
+
+                            <div class="relative z-10">
+                                <span class="inline-block border border-gray-600 text-xs font-bold px-2 py-1 rounded mb-2">Master's Thesis</span>
+                                <p class="font-bold text-sm italic">"Effectiveness of Reciprocal Inhibition Techniques for Individuals with Adhesive Capsulitis of Shoulder"</p>
+                            </div>
+                        </div>
+
+                        <!-- PERSONAL DETAILS -->
+                        <div class="bg-white rounded-xl shadow-md p-6">
+                            <h3 class="font-bold text-gray-900 uppercase mb-4 flex items-center gap-2">
+                                <i class="fas fa-id-card text-[var(--brand-maroon)]"></i> Personal Details
+                            </h3>
+                            <ul class="text-sm space-y-3 text-gray-600">
+                                <li><span class="font-bold block text-gray-900">Father's Name:</span> Md. Rafiq Ullah</li>
+                                <li><span class="font-bold block text-gray-900">Mother's Name:</span> Mahinur Begum</li>
+                                <li><span class="font-bold block text-gray-900">Date of Birth:</span> January 29, 1998</li>
+                                <li><span class="font-bold block text-gray-900">Membership:</span> BPA (Reg No: 1493)</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- References -->
+                <div class="mt-10 pt-8 border-t border-gray-200 text-center text-gray-500 italic">
+                    References Available upon request.
+                </div>
+            </section>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-gray-100 w-full py-6 border-t border-gray-200 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Md. Rifatur Rahman. All Rights Reserved.</p>
+            <div class="flex justify-center items-center gap-2 mt-2">
+                <span>Founder of</span>
+                 <img src="assets/images/logo.png" 
+                     alt="Motion Mechanics" 
+                     class="h-5 opacity-60"
+                     onerror="this.src='assets/images/logo.png';">
+                <span class="font-bold text-[var(--brand-green)]">Motion Mechanics</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.getElementById('content-bio').classList.add('hidden');
+            document.getElementById('content-bio').classList.remove('block');
+            document.getElementById('content-cv').classList.add('hidden');
+            document.getElementById('content-cv').classList.remove('block');
+            
+            // Deactivate buttons
+            document.getElementById('tab-bio').classList.remove('active');
+            document.getElementById('tab-cv').classList.remove('active');
+
+            // Show selected tab
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            document.getElementById('content-' + tabName).classList.add('block');
+            
+            // Activate button
+            document.getElementById('tab-' + tabName).classList.add('active');
+        }
+    </script>
+</body>
+</html>
