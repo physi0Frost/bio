@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Rifatur Rahman | Clinical Physiotherapist & Founder</title>
+    <title>Md. Rifatur Rahman | Lead Physiotherapy Specialist & Founder</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -237,6 +237,25 @@
             .bg-white { background: none !important; }
             a { text-decoration: none; color: black; }
         }
+
+        /* Header contact links (clean + modern) */
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 0.22rem 0.5rem;
+            border-radius: 0.375rem;
+            transition: background-color 160ms ease, transform 160ms ease, color 160ms ease;
+            line-height: 1;
+        }
+        .contact-link .contact-text { color: inherit; }
+        .contact-link i { width: 1.1rem; text-align: center; }
+        .contact-link:hover { background: rgba(255,255,255,0.04); transform: translateY(-2px); color: #ffffff; }
+
+        /* Accessible hidden text */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6">
@@ -246,7 +265,7 @@
         <button onclick="window.print()" class="bg-gray-800 hover:bg-gray-900 text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110" title="Save as PDF">
             <i class="fas fa-print text-xl"></i>
         </button>
-        <a href="mailto:mdrifaturrahman29@gmail.com" class="bg-[var(--brand-maroon)] hover:bg-[var(--brand-maroon-light)] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110" title="Contact Me">
+        <a href="mailto:robin@purrfecthq.com" class="bg-[var(--brand-maroon)] hover:bg-[var(--brand-maroon-light)] text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110" title="Contact Me">
             <i class="fas fa-envelope text-xl"></i>
         </a>
     </div>
@@ -294,7 +313,7 @@
                 <div class="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
                     <div class="flex justify-between items-start mb-4">
                         <div>
-                            <p class="text-[var(--brand-green)] font-bold tracking-widest uppercase text-sm mb-2 bg-white/10 inline-block px-2 py-1 rounded">Clinical Specialist</p>
+                            <p class="text-[var(--brand-green)] font-bold tracking-widest uppercase text-sm mb-2 bg-white/10 inline-block px-2 py-1 rounded">Lead Physiotherapy Specialist</p>
                             <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-2">Md. Rifatur Rahman</h1>
                             <p class="text-xl font-light text-gray-300">B.Sc. in PT (DU) | Founder of Motion Mechanics</p>
                         </div>
@@ -307,19 +326,23 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mt-6 pt-6 border-t border-white/20">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300 mt-6 pt-6 border-t border-white/20 contact-links">
+                        <a class="contact-link" href="https://wa.me/8801645754966" target="_blank" rel="noopener noreferrer" aria-label="Message on WhatsApp +8801645754966">
+                            <i class="fab fa-whatsapp text-[var(--brand-green)]" aria-hidden="true"></i>
+                            <span class="contact-text">+880 164 575 4966</span>
+                        </a>
+                        <a class="contact-link" href="mailto:robin@purrfecthq.com" aria-label="Send email to robin@purrfecthq.com">
+                            <i class="fas fa-envelope text-[var(--brand-green)]" aria-hidden="true"></i>
+                            <span class="contact-text">robin@purrfecthq.com</span>
+                        </a>
                         <div class="flex items-center gap-3">
-                            <i class="fas fa-phone text-[var(--brand-green)]"></i> +880 164 575 4966
+                            <i class="fas fa-map-marker-alt text-[var(--brand-green)]"></i>
+                            <span class="contact-text">Savar, Dhaka, Bangladesh</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-[var(--brand-green)]"></i> mdrifaturrahman29@gmail.com
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-map-marker-alt text-[var(--brand-green)]"></i> Savar, Dhaka, Bangladesh
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fas fa-globe text-[var(--brand-green)]"></i> Motion Mechanics Hub
-                        </div>
+                        <a class="contact-link" href="https://mm.purrfecthq.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Motion Mechanics">
+                            <i class="fas fa-globe text-[var(--brand-green)]" aria-hidden="true"></i>
+                            <span class="contact-text">Motion Mechanics</span>
+                        </a>
                     </div>
                 </div>
             </div>
